@@ -1,0 +1,236 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>be1.ru</title>
+</head>
+<body>
+<p>&lt;!DOCTYPE html&gt;<br />
+&lt;html lang=&quot;ru&quot;&gt;<br />
+&lt;head&gt;<br />
+&nbsp; &nbsp; &lt;meta charset=&quot;UTF-8&quot;&gt;<br />
+&nbsp; &nbsp; &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;<br />
+&nbsp; &nbsp; &lt;title&gt;Поздравление для Сони&lt;/title&gt;<br />
+&nbsp; &nbsp; &lt;style&gt;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; * {<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; margin: 0;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; padding: 0;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; box-sizing: border-box;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; }<br />
+&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; body {<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; font-family: &#39;Arial&#39;, sans-serif;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; min-height: 100vh;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; display: flex;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; align-items: center;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; justify-content: center;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; overflow: hidden;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; }<br />
+&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; .container {<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; text-align: center;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; padding: 2rem;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; }<br />
+&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; .main-page {<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; display: block;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; }<br />
+&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; .birthday-page {<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; display: none;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; }<br />
+&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; .link-button {<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; display: inline-block;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; background: rgba(255, 255, 255, 0.1);<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; backdrop-filter: blur(10px);<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; border: 2px solid rgba(255, 255, 255, 0.3);<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; color: white;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; padding: 20px 40px;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; text-decoration: none;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; border-radius: 50px;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; font-size: 1.2rem;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; font-weight: 500;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; transition: all 0.3s ease;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; cursor: pointer;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);<br />
+&nbsp; &nbsp; &nbsp; &nbsp; }<br />
+&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; .link-button:hover {<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; transform: translateY(-5px);<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; background: rgba(255, 255, 255, 0.2);<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; border-color: rgba(255, 255, 255, 0.5);<br />
+&nbsp; &nbsp; &nbsp; &nbsp; }<br />
+&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; .birthday-message {<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; color: white;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; font-size: clamp(2rem, 8vw, 4rem);<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; font-weight: 300;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; line-height: 1.3;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; opacity: 0;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; animation: fadeInUp 1.5s ease forwards;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; max-width: 90%;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; margin: 0 auto;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; }<br />
+&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; .birthday-message .highlight {<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; font-weight: 600;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; background: linear-gradient(45deg, #ff6b6b, #feca57);<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; -webkit-background-clip: text;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; -webkit-text-fill-color: transparent;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; background-clip: text;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; }<br />
+&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; .hearts {<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; position: absolute;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; width: 100%;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; height: 100%;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; overflow: hidden;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; pointer-events: none;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; }<br />
+&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; .heart {<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; position: absolute;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; font-size: 20px;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; color: rgba(255, 182, 193, 0.7);<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; animation: float 6s ease-in-out infinite;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; }<br />
+&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; @keyframes fadeInUp {<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; from {<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; opacity: 0;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; transform: translateY(50px);<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; to {<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; opacity: 1;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; transform: translateY(0);<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }<br />
+&nbsp; &nbsp; &nbsp; &nbsp; }<br />
+&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; @keyframes float {<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 0%, 100% {<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; transform: translateY(100vh) rotate(0deg);<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; opacity: 0;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 10%, 90% {<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; opacity: 1;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 50% {<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; transform: translateY(-10px) rotate(180deg);<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; opacity: 1;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }<br />
+&nbsp; &nbsp; &nbsp; &nbsp; }<br />
+&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; .back-button {<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; position: absolute;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; top: 30px;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; left: 30px;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; background: rgba(255, 255, 255, 0.1);<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; border: 1px solid rgba(255, 255, 255, 0.3);<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; color: white;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; padding: 10px 20px;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; border-radius: 25px;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; cursor: pointer;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; transition: all 0.3s ease;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; backdrop-filter: blur(10px);<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; display: none;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; }<br />
+&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; .back-button:hover {<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; background: rgba(255, 255, 255, 0.2);<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; transform: translateY(-2px);<br />
+&nbsp; &nbsp; &nbsp; &nbsp; }<br />
+&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; @media (max-width: 768px) {<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; .birthday-message {<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; font-size: clamp(1.5rem, 6vw, 3rem);<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; padding: 0 1rem;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; .link-button {<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; font-size: 1rem;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; padding: 15px 30px;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }<br />
+&nbsp; &nbsp; &nbsp; &nbsp; }<br />
+&nbsp; &nbsp; &lt;/style&gt;<br />
+&lt;/head&gt;<br />
+&lt;body&gt;<br />
+&nbsp; &nbsp; &lt;div class=&quot;hearts&quot; id=&quot;hearts&quot;&gt;&lt;/div&gt;<br />
+&nbsp; &nbsp;&nbsp;<br />
+&nbsp; &nbsp; &lt;button class=&quot;back-button&quot; id=&quot;backButton&quot; onclick=&quot;showMainPage()&quot;&gt;&larr; Назад&lt;/button&gt;<br />
+&nbsp; &nbsp;&nbsp;<br />
+&nbsp; &nbsp; &lt;div class=&quot;container&quot;&gt;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &lt;div class=&quot;main-page&quot; id=&quot;mainPage&quot;&gt;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;a href=&quot;#&quot; class=&quot;link-button&quot; onclick=&quot;showBirthdayPage()&quot;&gt;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 💡 ОТКРЫТЬ ТУ САМУЮ ИДЕЙКУ<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/a&gt;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &lt;/div&gt;<br />
+&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &lt;div class=&quot;birthday-page&quot; id=&quot;birthdayPage&quot;&gt;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;div class=&quot;birthday-message&quot;&gt;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;span class=&quot;highlight&quot;&gt;СОНЯ&lt;/span&gt;&lt;br&gt;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Я ТЕБЯ &lt;span class=&quot;highlight&quot;&gt;ЛЮБЛЮ&lt;/span&gt;&lt;br&gt;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; С &lt;span class=&quot;highlight&quot;&gt;16 ЛЕТИЕМ&lt;/span&gt; ТЕБЯ! 🎉&lt;br&gt;&lt;br&gt;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;span class=&quot;highlight&quot;&gt;ТЫ САМАЯ ЛУЧШАЯ&lt;/span&gt; В МИРЕ&lt;br&gt;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ПУСТЬ У НАС ВСЕ ВСЕГДА&lt;br&gt;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; БУДЕТ &lt;span class=&quot;highlight&quot;&gt;ХОРОШО!!!!&lt;/span&gt; ✨<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/div&gt;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &lt;/div&gt;<br />
+&nbsp; &nbsp; &lt;/div&gt;</p>
+
+<p>&nbsp; &nbsp; &lt;script&gt;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; function showBirthdayPage() {<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; document.getElementById(&#39;mainPage&#39;).style.display = &#39;none&#39;;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; document.getElementById(&#39;birthdayPage&#39;).style.display = &#39;block&#39;;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; document.getElementById(&#39;backButton&#39;).style.display = &#39;block&#39;;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; createHearts();<br />
+&nbsp; &nbsp; &nbsp; &nbsp; }<br />
+&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; function showMainPage() {<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; document.getElementById(&#39;mainPage&#39;).style.display = &#39;block&#39;;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; document.getElementById(&#39;birthdayPage&#39;).style.display = &#39;none&#39;;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; document.getElementById(&#39;backButton&#39;).style.display = &#39;none&#39;;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; clearHearts();<br />
+&nbsp; &nbsp; &nbsp; &nbsp; }<br />
+&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; function createHearts() {<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; const heartsContainer = document.getElementById(&#39;hearts&#39;);<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; const heartSymbols = [&#39;💖&#39;, &#39;💕&#39;, &#39;💗&#39;, &#39;💓&#39;, &#39;❤️&#39;, &#39;🎈&#39;, &#39;🎉&#39;];<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; setInterval(() =&gt; {<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (document.getElementById(&#39;birthdayPage&#39;).style.display === &#39;block&#39;) {<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; const heart = document.createElement(&#39;div&#39;);<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; heart.className = &#39;heart&#39;;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; heart.innerHTML = heartSymbols[Math.floor(Math.random() * heartSymbols.length)];<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; heart.style.left = Math.random() * 100 + &#39;%&#39;;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; heart.style.animationDelay = &#39;0s&#39;;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; heart.style.animationDuration = (Math.random() * 3 + 3) + &#39;s&#39;;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; heartsContainer.appendChild(heart);<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; setTimeout(() =&gt; {<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (heart.parentNode) {<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; heart.parentNode.removeChild(heart);<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }, 6000);<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }, 300);<br />
+&nbsp; &nbsp; &nbsp; &nbsp; }<br />
+&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; function clearHearts() {<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; const heartsContainer = document.getElementById(&#39;hearts&#39;);<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; heartsContainer.innerHTML = &#39;&#39;;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; }<br />
+&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; // Предотвращение перехода по ссылке<br />
+&nbsp; &nbsp; &nbsp; &nbsp; document.addEventListener(&#39;click&#39;, function(e) {<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (e.target.tagName === &#39;A&#39;) {<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; e.preventDefault();<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }<br />
+&nbsp; &nbsp; &nbsp; &nbsp; });<br />
+&nbsp; &nbsp; &lt;/script&gt;<br />
+&lt;/body&gt;<br />
+&lt;/html&gt;</p>
+</body>
+</html>
